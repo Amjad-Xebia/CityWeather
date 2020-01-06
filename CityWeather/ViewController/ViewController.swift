@@ -13,6 +13,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        NetworkManager().getCurrentWeather(cities: "Delhi") { (weather, error) in
+            
+            if let weather = weather {
+                print(weather.cityName)
+                print(weather.tempMin)
+            }
+            
+        }
     }
 
 
