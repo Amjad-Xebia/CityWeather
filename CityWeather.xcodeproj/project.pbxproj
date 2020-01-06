@@ -99,13 +99,12 @@
 		4D84860723C3326C00C3651F /* CityWeather */ = {
 			isa = PBXGroup;
 			children = (
-				4D84860823C3326C00C3651F /* AppDelegate.swift */,
-				4D84860A23C3326C00C3651F /* SceneDelegate.swift */,
-				4D84860C23C3326C00C3651F /* ViewController.swift */,
-				4D84860E23C3326C00C3651F /* Main.storyboard */,
-				4D84861123C3327000C3651F /* Assets.xcassets */,
-				4D84861323C3327000C3651F /* LaunchScreen.storyboard */,
-				4D84861623C3327000C3651F /* Info.plist */,
+				4D84863823C338D600C3651F /* App */,
+				4D84863D23C3398400C3651F /* Networking */,
+				4D84863C23C3396E00C3651F /* Model */,
+				4D84863A23C338FE00C3651F /* Storyboard */,
+				4D84863923C338E900C3651F /* ViewController */,
+				4D84863B23C3391F00C3651F /* Resource */,
 			);
 			path = CityWeather;
 			sourceTree = "<group>";
@@ -126,6 +125,55 @@
 				4D84862C23C3327100C3651F /* Info.plist */,
 			);
 			path = CityWeatherUITests;
+			sourceTree = "<group>";
+		};
+		4D84863823C338D600C3651F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4D84860823C3326C00C3651F /* AppDelegate.swift */,
+				4D84860A23C3326C00C3651F /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4D84863923C338E900C3651F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D84860C23C3326C00C3651F /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4D84863A23C338FE00C3651F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4D84860E23C3326C00C3651F /* Main.storyboard */,
+				4D84861323C3327000C3651F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		4D84863B23C3391F00C3651F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4D84861123C3327000C3651F /* Assets.xcassets */,
+				4D84861623C3327000C3651F /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4D84863C23C3396E00C3651F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D84863D23C3398400C3651F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,7 +484,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5MV6L28PUQ;
-				INFOPLIST_FILE = CityWeather/Info.plist;
+				INFOPLIST_FILE = CityWeather/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xebia.CityWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,7 +503,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5MV6L28PUQ;
-				INFOPLIST_FILE = CityWeather/Info.plist;
+				INFOPLIST_FILE = CityWeather/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xebia.CityWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
