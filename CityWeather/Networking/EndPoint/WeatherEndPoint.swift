@@ -16,7 +16,8 @@ enum NetworkEnvironment {
 }
 
 public enum WeatherApi {
-    case currentTemperatures(cities: String)
+    case currentWeather(cities: String)
+    case forecastWeather(city: String)
 }
 
 extension WeatherApi: EndPointType {
@@ -37,8 +38,10 @@ extension WeatherApi: EndPointType {
     
     var path: String {
         switch self {
-        case .currentTemperatures:
+        case .currentWeather:
             return "weather"
+        case .forecastWeather:
+            return "forecast"
         }
     }
     
@@ -48,7 +51,12 @@ extension WeatherApi: EndPointType {
     
     var task: HTTPTask {
         switch self {
-        case .currentTemperatures(let query):
+        case .currentWeather(let query):
+            return .requestParameters(bodyParameters: nil,
+                                      bodyEncoding: .urlEncoding,
+                                      urlParameters: ["q": query,
+                                                      "appid": NetworkManager.MovieAPIKey])
+        case .forecastWeather(let query):
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
                                       urlParameters: ["q": query,

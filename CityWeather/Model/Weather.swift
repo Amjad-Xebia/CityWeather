@@ -11,7 +11,6 @@ import Foundation
 struct Weather: Codable {
     let tempMin: Float
     let tempMax: Float
-    let cityName: String
     let humidity: Int
     let windSpeed: Float
     let weatherDesc: String
@@ -34,7 +33,6 @@ struct Weather: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        cityName = try container.decode(String.self, forKey: .name)
         
         let main = try container.nestedContainer(keyedBy: MainCodingKeys.self, forKey: .main)
         tempMin = try main.decode(Float.self, forKey: .temp_min)
@@ -59,7 +57,6 @@ struct Weather: Codable {
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(cityName, forKey: .name)
         
         var main = container.nestedContainer(keyedBy: MainCodingKeys.self, forKey: .main)
         try main.encode(tempMin, forKey: .temp_min)

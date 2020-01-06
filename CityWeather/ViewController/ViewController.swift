@@ -14,13 +14,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        NetworkManager().getCurrentWeather(cities: "Delhi") { (weather, error) in
-            
-            if let weather = weather {
-                print(weather.cityName)
-                print(weather.tempMin)
+//        NetworkManager().getCurrentWeather(cities: "Delhi") { (weather, error) in
+//            
+//            if let weather = weather {
+//                print(weather.cityName)
+//                print(weather.tempMin)
+//            }
+//
+//        }
+        
+        NetworkManager().getForecastWeather(city: "Delhi") { (weathers, error) in
+            guard let weathers = weathers else { return }
+            for weather in weathers.list {
+                print(weather.weatherDesc)
             }
-            
         }
     }
 

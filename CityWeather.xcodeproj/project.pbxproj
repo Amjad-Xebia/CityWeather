@@ -26,6 +26,7 @@
 		4D84865323C33D5D00C3651F /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D84865223C33D5D00C3651F /* JSONParameterEncoder.swift */; };
 		4D84865523C33D9A00C3651F /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D84865423C33D9A00C3651F /* NetworkLogger.swift */; };
 		4D84865723C346E000C3651F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D84865623C346E000C3651F /* Weather.swift */; };
+		4D84865923C36D5A00C3651F /* ForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D84865823C36D5A00C3651F /* ForecastWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		4D84865223C33D5D00C3651F /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		4D84865423C33D9A00C3651F /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		4D84865623C346E000C3651F /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		4D84865823C36D5A00C3651F /* ForecastWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				4D84865623C346E000C3651F /* Weather.swift */,
+				4D84865823C36D5A00C3651F /* ForecastWeather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D84865923C36D5A00C3651F /* ForecastWeather.swift in Sources */,
 				4D84860D23C3326C00C3651F /* ViewController.swift in Sources */,
 				4D84864023C33BDC00C3651F /* WeatherEndPoint.swift in Sources */,
 				4D84864F23C33D2800C3651F /* ParameterEncoding.swift in Sources */,
