@@ -7,30 +7,51 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var txtCityName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        NetworkManager().getCurrentWeather(cities: "Delhi") { (weather, error) in
-//            
-//            if let weather = weather {
-//                print(weather.cityName)
-//                print(weather.tempMin)
-//            }
-//
-//        }
+    }
+    
+    @IBAction func fetchWeatherButtonPressed(_ sender: Any) {
+        guard let city = self.txtCityName.text, !city.isEmpty else {
+            print("Enter city name."); return
+        }
+        NetworkManager().getCurrentWeather(cities: city) { (weather, error) in
+            if let weather = weather {
+                print(weather.tempMin)
+            }
+        }
+    }
+    
+    @IBAction func findCurrentCityAndWeatherButtonPressed(_ sender: Any) {
+        let locationManager = LocationManager.shared()
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+    }
+}
+
+extension ViewController: LocationManagerDelegate {
+    
+    func findCurrentCityAndCountryName(city: String, country: String) {
         
-        NetworkManager().getForecastWeather(city: "Delhi") { (weathers, error) in
+        NetworkManager().getForecastWeather(city: city) { (weathers, error) in
             guard let weathers = weathers else { return }
             for weather in weathers.list {
                 print(weather.weatherDesc)
             }
         }
+        
     }
-
-
+    
+    func fialedToFindCurrentCityNameWithError(error: Error) {
+        print(error.localizedDescription)
+    }
 }
 
