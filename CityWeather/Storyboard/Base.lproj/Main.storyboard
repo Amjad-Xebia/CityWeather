@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,134 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CityWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter city name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R1-Do-cjK">
+                                <rect key="frame" x="20" y="89" width="135.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M8w-1X-cJe">
+                                <rect key="frame" x="20" y="118.5" width="242" height="34"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBZ-lE-E3S" customClass="UIBorderButton" customModule="CityWeather" customModuleProvider="target">
+                                <rect key="frame" x="270" y="117" width="124" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="PMw-4r-Wht"/>
+                                    <constraint firstAttribute="height" constant="34" id="lyv-2p-xlk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <state key="normal" title="Fetch Weather">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="fetchWeatherButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="brw-Gj-6XE"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hH1-WH-WMQ">
+                                <rect key="frame" x="20" y="160.5" width="374" height="20"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyr-Ve-vse">
+                                        <rect key="frame" x="8" y="9.5" width="157.5" height="1"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="M5w-Wg-qgV"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUZ-V6-HTi">
+                                        <rect key="frame" x="178" y="1.5" width="18.5" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXU-y2-Ldr">
+                                        <rect key="frame" x="208.5" y="9.5" width="157.5" height="1"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="WAh-yC-EG6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Eyr-Ve-vse" firstAttribute="centerY" secondItem="uUZ-V6-HTi" secondAttribute="centerY" id="2EF-3w-9u3"/>
+                                    <constraint firstItem="uUZ-V6-HTi" firstAttribute="centerY" secondItem="hH1-WH-WMQ" secondAttribute="centerY" id="2Tb-Ke-eVY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eyr-Ve-vse" secondAttribute="trailing" constant="208.5" id="5dv-X1-1j1"/>
+                                    <constraint firstItem="tXU-y2-Ldr" firstAttribute="centerY" secondItem="hH1-WH-WMQ" secondAttribute="centerY" id="JHS-q8-Cox"/>
+                                    <constraint firstItem="uUZ-V6-HTi" firstAttribute="centerX" secondItem="hH1-WH-WMQ" secondAttribute="centerX" id="KmS-kr-h2m"/>
+                                    <constraint firstItem="Eyr-Ve-vse" firstAttribute="leading" secondItem="hH1-WH-WMQ" secondAttribute="leading" constant="8" id="L8P-cd-NwW"/>
+                                    <constraint firstItem="tXU-y2-Ldr" firstAttribute="leading" secondItem="uUZ-V6-HTi" secondAttribute="trailing" constant="12" id="NYO-ef-B6A"/>
+                                    <constraint firstAttribute="height" constant="20" id="T29-Gs-lE3"/>
+                                    <constraint firstAttribute="trailing" secondItem="tXU-y2-Ldr" secondAttribute="trailing" constant="8" id="VY6-Xp-odl"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TL0-yB-7Fz" customClass="UIBorderButton" customModule="CityWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="188.5" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="MzZ-q5-dqL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <state key="normal" title="Find Current City and Weather ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="findCurrentCityAndWeatherButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Guw-B7-LKs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="M8w-1X-cJe" firstAttribute="top" secondItem="0R1-Do-cjK" secondAttribute="bottom" constant="12" id="17M-f9-rax"/>
+                            <constraint firstItem="TL0-yB-7Fz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C9B-TA-EkR"/>
+                            <constraint firstItem="dBZ-lE-E3S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="73" id="EaX-dV-ed9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TL0-yB-7Fz" secondAttribute="trailing" constant="20" id="GFT-26-V2X"/>
+                            <constraint firstItem="TL0-yB-7Fz" firstAttribute="top" secondItem="hH1-WH-WMQ" secondAttribute="bottom" constant="8" id="GHr-qH-CLS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dBZ-lE-E3S" secondAttribute="trailing" constant="20" id="N1x-hE-nLo"/>
+                            <constraint firstItem="0R1-Do-cjK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Q4K-oV-VPg"/>
+                            <constraint firstItem="hH1-WH-WMQ" firstAttribute="top" secondItem="M8w-1X-cJe" secondAttribute="bottom" constant="8" id="Sph-qB-g11"/>
+                            <constraint firstItem="M8w-1X-cJe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TFo-vX-Mbt"/>
+                            <constraint firstItem="dBZ-lE-E3S" firstAttribute="leading" secondItem="M8w-1X-cJe" secondAttribute="trailing" constant="8" id="WVi-mP-qyb"/>
+                            <constraint firstItem="0R1-Do-cjK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="ogn-VU-Fhz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hH1-WH-WMQ" secondAttribute="trailing" constant="20" id="wXG-zT-I2x"/>
+                            <constraint firstItem="hH1-WH-WMQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wiL-ah-0rV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="txtCityName" destination="M8w-1X-cJe" id="WQy-Yi-hsS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
     </scenes>
 </document>
