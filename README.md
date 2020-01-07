@@ -9,7 +9,7 @@ Test Coverage: 13.69%
 I have used [Slather](https://cocoacasts.com/how-to-generate-code-coverage-reports-in-xcode-with-slather) tool to generate code coverage report. 
 
 
-To generate report use below commnad and specify path for xcworkspace and xcodeproj
+To generate report use below commnad and specify path for xcodeproj
 ```bash
 $ slather coverage -s --scheme CityWeather --show path/to/XNYTimes.xcworkspace path/to/CityWeather.xcodeproj
 ```
