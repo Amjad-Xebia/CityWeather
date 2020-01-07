@@ -33,6 +33,9 @@
 		4DFB7CF823C4713C00B9182C /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB7CF723C4713C00B9182C /* GCDBlackBox.swift */; };
 		4DFB7CFA23C494B800B9182C /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB7CF923C494B800B9182C /* UIViewController+Alert.swift */; };
 		4DFB7CFC23C497ED00B9182C /* SDLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB7CFB23C497ED00B9182C /* SDLoader.swift */; };
+		4DFB7CFE23C4B39E00B9182C /* WetherModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB7CFD23C4B39E00B9182C /* WetherModelTest.swift */; };
+		4DFB7D0023C4B5E900B9182C /* ForecastWeatherModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB7CFF23C4B5E900B9182C /* ForecastWeatherModelTest.swift */; };
+		4DFB7D0223C4BCE600B9182C /* GCDBlackBoxOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFB7D0123C4BCE600B9182C /* GCDBlackBoxOperationTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		4DFB7CF723C4713C00B9182C /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		4DFB7CF923C494B800B9182C /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		4DFB7CFB23C497ED00B9182C /* SDLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDLoader.swift; sourceTree = "<group>"; };
+		4DFB7CFD23C4B39E00B9182C /* WetherModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetherModelTest.swift; sourceTree = "<group>"; };
+		4DFB7CFF23C4B5E900B9182C /* ForecastWeatherModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherModelTest.swift; sourceTree = "<group>"; };
+		4DFB7D0123C4BCE600B9182C /* GCDBlackBoxOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBoxOperationTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				4D84861F23C3327100C3651F /* CityWeatherTests.swift */,
+				4DFB7CFD23C4B39E00B9182C /* WetherModelTest.swift */,
+				4DFB7CFF23C4B5E900B9182C /* ForecastWeatherModelTest.swift */,
+				4DFB7D0123C4BCE600B9182C /* GCDBlackBoxOperationTest.swift */,
 				4D84862123C3327100C3651F /* Info.plist */,
 			);
 			path = CityWeatherTests;
@@ -437,7 +446,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFB7CFE23C4B39E00B9182C /* WetherModelTest.swift in Sources */,
 				4D84862023C3327100C3651F /* CityWeatherTests.swift in Sources */,
+				4DFB7D0223C4BCE600B9182C /* GCDBlackBoxOperationTest.swift in Sources */,
+				4DFB7D0023C4B5E900B9182C /* ForecastWeatherModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
