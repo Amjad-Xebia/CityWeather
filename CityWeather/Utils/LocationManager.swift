@@ -68,7 +68,10 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             return
         }
         
-        // singleton for get last location
+        // Stop getting location
+        stopUpdatingLocation()
+        
+        // Singleton for get last location
         self.lastLocation = location
         
         updateLocation(currentLocation: location)
