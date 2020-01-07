@@ -21,10 +21,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex: Delhi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M8w-1X-cJe">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex: Delhi,Mumbai" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M8w-1X-cJe">
                                 <rect key="frame" x="20" y="118.5" width="242" height="34"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ahz-tv-JDw"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBZ-lE-E3S" customClass="UIBorderButton" customModule="CityWeather" customModuleProvider="target">
                                 <rect key="frame" x="270" y="117" width="124" height="34"/>
@@ -79,8 +82,8 @@
                                 <constraints>
                                     <constraint firstItem="Eyr-Ve-vse" firstAttribute="centerY" secondItem="uUZ-V6-HTi" secondAttribute="centerY" id="2EF-3w-9u3"/>
                                     <constraint firstItem="uUZ-V6-HTi" firstAttribute="centerY" secondItem="hH1-WH-WMQ" secondAttribute="centerY" id="2Tb-Ke-eVY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Eyr-Ve-vse" secondAttribute="trailing" constant="208.5" id="5dv-X1-1j1"/>
                                     <constraint firstItem="tXU-y2-Ldr" firstAttribute="centerY" secondItem="hH1-WH-WMQ" secondAttribute="centerY" id="JHS-q8-Cox"/>
+                                    <constraint firstItem="uUZ-V6-HTi" firstAttribute="leading" secondItem="Eyr-Ve-vse" secondAttribute="trailing" constant="12.5" id="Jbs-AD-pIj"/>
                                     <constraint firstItem="uUZ-V6-HTi" firstAttribute="centerX" secondItem="hH1-WH-WMQ" secondAttribute="centerX" id="KmS-kr-h2m"/>
                                     <constraint firstItem="Eyr-Ve-vse" firstAttribute="leading" secondItem="hH1-WH-WMQ" secondAttribute="leading" constant="8" id="L8P-cd-NwW"/>
                                     <constraint firstItem="tXU-y2-Ldr" firstAttribute="leading" secondItem="uUZ-V6-HTi" secondAttribute="trailing" constant="12" id="NYO-ef-B6A"/>
@@ -112,10 +115,86 @@
                                     <action selector="findCurrentCityAndWeatherButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Guw-B7-LKs"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l8v-S6-fXr">
+                                <rect key="frame" x="20" y="242.5" width="374" height="619.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" rowHeight="130" id="vYz-mI-hCa" customClass="WeatherTableViewCell" customModule="CityWeather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vYz-mI-hCa" id="7Bl-Od-5tX">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaN-YV-U4B">
+                                                    <rect key="frame" x="20" y="11" width="334" height="19"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Temp:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoh-MR-faV">
+                                                    <rect key="frame" x="20" y="38" width="159" height="19"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khr-1P-0rd">
+                                                    <rect key="frame" x="20" y="65" width="334" height="19"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Speed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIB-r6-Uhu">
+                                                    <rect key="frame" x="20" y="92" width="334" height="19"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Temp:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6q-7E-8zU">
+                                                    <rect key="frame" x="195" y="38" width="159" height="19"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Uoh-MR-faV" firstAttribute="top" secondItem="KaN-YV-U4B" secondAttribute="bottom" constant="8" id="2DZ-7m-CWV"/>
+                                                <constraint firstItem="khr-1P-0rd" firstAttribute="trailing" secondItem="7Bl-Od-5tX" secondAttribute="trailingMargin" id="6S4-Op-g1u"/>
+                                                <constraint firstItem="RIB-r6-Uhu" firstAttribute="leading" secondItem="7Bl-Od-5tX" secondAttribute="leadingMargin" id="BL2-UC-Yle"/>
+                                                <constraint firstItem="v6q-7E-8zU" firstAttribute="leading" secondItem="Uoh-MR-faV" secondAttribute="trailing" constant="16" id="EO7-rd-fXG"/>
+                                                <constraint firstItem="khr-1P-0rd" firstAttribute="leading" secondItem="7Bl-Od-5tX" secondAttribute="leadingMargin" id="LQF-2c-7bN"/>
+                                                <constraint firstItem="v6q-7E-8zU" firstAttribute="trailing" secondItem="7Bl-Od-5tX" secondAttribute="trailingMargin" id="LhU-IJ-qOL"/>
+                                                <constraint firstItem="KaN-YV-U4B" firstAttribute="top" secondItem="7Bl-Od-5tX" secondAttribute="topMargin" id="Oll-xc-JsO"/>
+                                                <constraint firstItem="KaN-YV-U4B" firstAttribute="leading" secondItem="7Bl-Od-5tX" secondAttribute="leadingMargin" id="TK8-aL-RgF"/>
+                                                <constraint firstItem="Uoh-MR-faV" firstAttribute="leading" secondItem="7Bl-Od-5tX" secondAttribute="leadingMargin" id="afb-oy-jho"/>
+                                                <constraint firstItem="RIB-r6-Uhu" firstAttribute="top" secondItem="khr-1P-0rd" secondAttribute="bottom" constant="8" id="eer-Eu-8Ws"/>
+                                                <constraint firstItem="KaN-YV-U4B" firstAttribute="trailing" secondItem="7Bl-Od-5tX" secondAttribute="trailingMargin" id="hvA-9n-97h"/>
+                                                <constraint firstItem="Uoh-MR-faV" firstAttribute="width" secondItem="v6q-7E-8zU" secondAttribute="width" id="ica-VX-Rsk"/>
+                                                <constraint firstItem="v6q-7E-8zU" firstAttribute="top" secondItem="KaN-YV-U4B" secondAttribute="bottom" constant="8" id="lOi-Fw-lLg"/>
+                                                <constraint firstItem="RIB-r6-Uhu" firstAttribute="trailing" secondItem="7Bl-Od-5tX" secondAttribute="trailingMargin" id="nlS-qm-y8t"/>
+                                                <constraint firstItem="khr-1P-0rd" firstAttribute="top" secondItem="Uoh-MR-faV" secondAttribute="bottom" constant="8" id="taT-Nk-twZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="RIB-r6-Uhu" secondAttribute="bottom" constant="8" id="yfB-zj-y0q"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblCityName" destination="KaN-YV-U4B" id="O4N-ZV-SAf"/>
+                                            <outlet property="lblMaxTemp" destination="v6q-7E-8zU" id="AEK-gL-9Z2"/>
+                                            <outlet property="lblMinTemp" destination="Uoh-MR-faV" id="vCA-Ox-T8W"/>
+                                            <outlet property="lblWeatherDesc" destination="khr-1P-0rd" id="wIZ-Z0-Xis"/>
+                                            <outlet property="lblWindSpeed" destination="RIB-r6-Uhu" id="Gzu-Eo-7Fl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Qfr-GJ-Qcw"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="O2M-Of-4PC"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="M8w-1X-cJe" firstAttribute="top" secondItem="0R1-Do-cjK" secondAttribute="bottom" constant="12" id="17M-f9-rax"/>
+                            <constraint firstItem="l8v-S6-fXr" firstAttribute="top" secondItem="TL0-yB-7Fz" secondAttribute="bottom" constant="20" id="9b5-dx-kFq"/>
                             <constraint firstItem="TL0-yB-7Fz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C9B-TA-EkR"/>
                             <constraint firstItem="dBZ-lE-E3S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="73" id="EaX-dV-ed9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TL0-yB-7Fz" secondAttribute="trailing" constant="20" id="GFT-26-V2X"/>
@@ -125,13 +204,17 @@
                             <constraint firstItem="hH1-WH-WMQ" firstAttribute="top" secondItem="M8w-1X-cJe" secondAttribute="bottom" constant="8" id="Sph-qB-g11"/>
                             <constraint firstItem="M8w-1X-cJe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TFo-vX-Mbt"/>
                             <constraint firstItem="dBZ-lE-E3S" firstAttribute="leading" secondItem="M8w-1X-cJe" secondAttribute="trailing" constant="8" id="WVi-mP-qyb"/>
+                            <constraint firstItem="l8v-S6-fXr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hmV-eV-LKT"/>
                             <constraint firstItem="0R1-Do-cjK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="ogn-VU-Fhz"/>
+                            <constraint firstItem="l8v-S6-fXr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tPx-Eo-2KY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l8v-S6-fXr" secondAttribute="trailing" constant="20" id="tbV-lZ-9Jo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hH1-WH-WMQ" secondAttribute="trailing" constant="20" id="wXG-zT-I2x"/>
                             <constraint firstItem="hH1-WH-WMQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wiL-ah-0rV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="tblWeather" destination="l8v-S6-fXr" id="tfa-9M-F7S"/>
                         <outlet property="txtCityName" destination="M8w-1X-cJe" id="WQy-Yi-hsS"/>
                     </connections>
                 </viewController>

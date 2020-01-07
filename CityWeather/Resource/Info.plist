@@ -64,8 +64,12 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>find your city name.</string>
+	<string>Find your city name.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>find your city name.</string>
+	<string>Find your city name.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Find your city name.</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
